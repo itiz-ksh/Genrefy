@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+# Allow these specific files
+!index.html
+!model.py
+!README.md
+!requirements.txt
+!script.js
+!style.css
+!app.py
+!predict.py
+
+# Allow .gitignore itself
+!.gitignore
