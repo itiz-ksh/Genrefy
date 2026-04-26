@@ -1,66 +1,100 @@
-# Genrefy - Music Genre Classification
+# Genrefy – Music Genre Classification using Deep Learning
 
-A web application that predicts music genres from audio files using deep learning.
+Genrefy is a deep learning-based web application that classifies music genres from audio files and provides song recommendations using Spotify integration.
 
-## Features
+---
 
-- Upload audio files (MP3, WAV, OGG, FLAC, M4A, AAC, WebM)
-- Real-time genre prediction with confidence scores
-- Top 3 genre predictions
-- Clean, modern web interface
+## Overview
 
-## Setup
+This project demonstrates the application of Convolutional Neural Networks (CNNs) in audio signal processing. It converts raw audio into Mel Spectrograms and predicts the most probable genres with confidence scores.
 
-1. Install Python dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+---
 
-2. Make sure you have the model file `best_model.keras` in the same directory as the scripts.
+## Key Features
 
-3. Run the Flask server:
-   ```bash
-   python3 app.py
-   ```
+- Audio upload and recording support  
+- Real-time genre prediction  
+- Top 3 genre predictions with confidence  
+- Spotify-based song recommendations  
+- Interactive web interface  
 
-4. Open `index.html` in your web browser or serve it via a web server.
+---
 
-## API
+## Tech Stack
 
-### POST /predict
+**Backend:** Flask, TensorFlow, Librosa, NumPy  
+**Frontend:** HTML, CSS, JavaScript  
+**Model:** CNN trained on GTZAN dataset  
 
-Upload an audio file to get genre predictions.
+---
 
-**Request:**
-- Content-Type: `multipart/form-data`
-- Body: `audio` field with audio file
+## System Workflow
 
-**Response:**
-```json
-{
-  "predictions": [
-    {"genre": "rock", "confidence": 0.85},
-    {"genre": "pop", "confidence": 0.12},
-    {"genre": "jazz", "confidence": 0.03}
-  ]
-}
-```
+1. User uploads or records audio  
+2. Audio is processed using Librosa  
+3. Converted into Mel Spectrogram  
+4. CNN model predicts genre probabilities  
+5. Top genres are selected  
+6. Spotify API returns recommendations  
 
-## Supported Genres
+---
 
-- blues
-- classical
-- country
-- disco
-- hiphop
-- jazz
-- metal
-- pop
-- reggae
-- rock
+## Model Architecture
 
-## Technologies Used
+- Input: Mel Spectrogram (128 × 130)  
+- Conv2D → ReLU → MaxPooling → BatchNorm (×3)  
+- Dense Layer (128 units)  
+- Dropout (0.3)  
+- Output Layer (Softmax, 10 classes)  
 
-- **Backend:** Flask, TensorFlow, Librosa
-- **Frontend:** HTML, CSS, JavaScript
-- **Model:** Convolutional Neural Network trained on GTZAN dataset
+---
+
+## Results
+
+- Achieves reliable genre classification on GTZAN dataset  
+- Provides consistent top-3 predictions  
+- Real-time inference through Flask backend  
+
+---
+
+## Project Structure
+Genrefy/
+│── app.py
+│── predict.py
+│── model.py
+│── requirements.txt
+│── index.html
+│── style.css
+│── script.js
+│── best_model.keras
+│── uploads/
+
+---
+
+## Setup Instructions
+
+```bash
+git clone https://github.com/YOUR_USERNAME/genrefy.git
+cd genrefy
+pip install -r requirements.txt
+python3 app.py
+
+Spotify Integration (Optional)
+export SPOTIPY_CLIENT_ID=your_id
+export SPOTIPY_CLIENT_SECRET=your_secret
+
+Dataset-
+
+GTZAN Dataset:
+https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification
+
+Future Improvements
+  Hybrid CNN + LSTM model
+  Larger datasets for better generalization
+  Cloud deployment
+  Personalized recommendations
+
+Author's -
+
+Kshitiz Negi
+Prince Negi
