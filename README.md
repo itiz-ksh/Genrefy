@@ -62,13 +62,21 @@ This project demonstrates the application of Convolutional Neural Networks (CNNs
 Genrefy/
 
 │── app.py
+
 │── predict.py
+
 │── model.py
+
 │── requirements.txt
+
 │── index.html
+
 │── style.css
+
 │── script.js
+
 │── best_model.keras
+
 │── uploads/
 
 ---
