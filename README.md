@@ -91,12 +91,11 @@ GTZAN Dataset:
 https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification
 
 Future Improvements
-  Hybrid CNN + LSTM model
-  Larger datasets for better generalization
-  Cloud deployment
-  Personalized recommendations
+-> Hybrid CNN + LSTM model
+-> Larger datasets for better generalization
+-> Cloud deployment
+-> Personalized recommendations
 
 Author's -
-
 Kshitiz Negi
 Prince Negi
