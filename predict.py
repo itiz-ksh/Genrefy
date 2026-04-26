@@ -37,7 +37,6 @@ def load_model_once():
             print("[Genrefy] Model loaded.")
     return _model
 
-# ── Audio preprocessing ───────────────────────────────────────────────────────
 def preprocess_audio(file_path: str):
     try:
         signal, sr = librosa.load(file_path, sr=SAMPLE_RATE, mono=True)
